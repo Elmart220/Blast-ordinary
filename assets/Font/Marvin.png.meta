@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "0f3d1c20-d99b-4988-8c99-6cfee55a93dd",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "Marvin": {
+      "ver": "1.0.3",
+      "uuid": "a3c02f0a-51eb-4d17-95f5-484e8a8c7aa8",
+      "rawTextureUuid": "0f3d1c20-d99b-4988-8c99-6cfee55a93dd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 105.5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 511,
+      "height": 301,
+      "rawWidth": 512,
+      "rawHeight": 512,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

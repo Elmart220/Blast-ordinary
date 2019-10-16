@@ -27,7 +27,7 @@ cc.Class({
     setLoad: function(posit, mposit, self) {
         this.game = self;   // - доступ к методам игры
         this.colorCount = this.game.colorCount;
-        let color = Math.round(cc.random0To1()*(this.colorCount-1));
+        let color = Math.round(Math.random()*(this.colorCount-1));
         //Позиция и цвет:
         this.tileDat = new ActTile(mposit.x, mposit.y, color, false);
         this.wth = this.game.tileWth; // - ширина
@@ -37,7 +37,7 @@ cc.Class({
         this.time = 0;  // - время отчета
         this.weapon = false;
         this.opacit = 0;
-        this.rnOpacit = cc.random0To1()*10;
+        this.rnOpacit = Math.random()*10;
     },
     //Загружает и отображает данный элемент на игровом поле (в начале игры):
     loadSprite: function() {
@@ -87,7 +87,7 @@ cc.Class({
     },
     //Анимирует падение на величину s:
     setTileMove: function(s) {
-        let smove = cc.moveBy(this.moveDuration/2,cc.p(0, -s*this.moveStep)).easing(cc.easeCubicActionIn());
+        let smove = cc.moveBy(this.moveDuration/2,cc.v2(0, -s*this.moveStep)).easing(cc.easeCubicActionIn());
         return cc.sequence(smove);
     },
     //Анимирует уменьшение (в процессе игры):
@@ -102,7 +102,7 @@ cc.Class({
     },
     //Анимирует исчезновение спустя некоторое время:
     setTileDontShow: function () {
-        let sleep = cc.delayTime(cc.random0To1()*this.dontShowTimeRn);
+        let sleep = cc.delayTime(Math.random()*this.dontShowTimeRn);
         let noshow = cc.scaleTo(this.scaleDuration,0, 0);
         return cc.sequence(sleep, noshow);
     },
@@ -131,7 +131,7 @@ cc.Class({
                 //Если тайл утратил цвет:
                 if (this.tileDat.c < 0 && !this.tileDat.isBonus) {
                     //Генерируем ему цвет:
-                    let color = Math.round(cc.random0To1()*(this.colorCount-1));
+                    let color = Math.round(Math.random()*(this.colorCount-1));
                     this.tileDat.c = color; // - устанавливаем этот цвет
                     this.node.setScale(0, 0);   // - делаем тайл сжатым
                     this.node.runAction(this.setTileShow());  // - запускаем анимацию расширения
@@ -158,7 +158,7 @@ cc.Class({
         this.opacit += dt;
         this.node.opacity -= 0.2;
         if (this.opacit > this.rnOpacit) {
-            this.rnOpacit = cc.random0To1()*10;
+            this.rnOpacit = Math.random()*10;
             this.opacit = 0;
             this.node.opacity = 255;
         }

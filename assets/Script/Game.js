@@ -125,7 +125,7 @@ cc.Class({
         this.win = false;   // - состояние победы
         this.gameStady.node.opacity = 0;    // - сообщение о победе/проигрыше
         this.weapon = new Weapon(this.floodFill, false);    // - перо уничтожения по умолчанию
-        this.bonusTile = [cc.p(-1, -1), 0];    // - место появления бонусного тайла
+        this.bonusTile = [cc.v2(-1, -1), 0];    // - место появления бонусного тайла
         this.progressing = 0;   // - для плавного движения полосы успеха
         this.pausBt = false;    // - кнопка паузы не нажата
         this.btRel.setScale(0,0);   // - убираем кнопки малого меню
@@ -165,10 +165,10 @@ cc.Class({
                 //Создаем новый тайл:
                 let newTile = cc.instantiate(this.tilePrefab);
                 //Задаем позицию тайлу:
-                let posit = cc.p(this.marLeftRight + this.tileWth/2 + (j*(this.tileWth + this.dist)), 
+                let posit = cc.v2(this.marLeftRight + this.tileWth/2 + (j*(this.tileWth + this.dist)), 
                                  this.marBotTop + this.tileHg/2 + i*(this.tileHg + this.dist));
                 //Устанавливаем параметры его отображения:
-                newTile.getComponent("TileSc").setLoad(posit, cc.p(j,i), this);
+                newTile.getComponent("TileSc").setLoad(posit, cc.v2(j,i), this);
                 //Добавляем тайл в дерево узлов (отображаем его):
                 this.playArea.addChild(newTile);
                 //Добавояем ссылку на тайл в массив:
@@ -204,7 +204,7 @@ cc.Class({
                 this.weapon = tile.weapon;
             }
             //Заливаем воображаемые цвета тайлов:
-            this.weapon.method(cc.p(tileDat.x, tileDat.y), this);    // - вызываем метод текущего оружия
+            this.weapon.method(cc.v2(tileDat.x, tileDat.y), this);    // - вызываем метод текущего оружия
             //После процедуры заливки активирует необходимые тайлы:
             this.startClatcTile();
             //Если данное оружие одноразовое (бонусное):
@@ -257,7 +257,7 @@ cc.Class({
     btRandClick: function() {
         if (Global.money >= this.randPrice) {
             Global.money -= this.randPrice; // - делаем покупку
-            this.randTiles(cc.p(0,0), this);    // - перемешиваем поле
+            this.randTiles(cc.v2(0,0), this);    // - перемешиваем поле
             this.upAllDisplays(); // - обновляем дисплеи
             cc.audioEngine.playEffect(this.paySound, false);
         }
@@ -357,7 +357,7 @@ cc.Class({
     },
     //Воспроизведение разрушения тайлов:
     tileSound: function() {
-        let s = Math.round(cc.random0To1()*(Global.soundUrls.length-1));
+        let s = Math.round(Math.random()*(Global.soundUrls.length-1));
         cc.audioEngine.playEffect(Global.soundClips[s], false);
     },
     //Устанавливает тайлу бонус и скин:
@@ -449,7 +449,7 @@ cc.Class({
         } else if (this.bonusTile[1] > 15) {
             this.setBonus(1, new Weapon(this.bomb, true));
         } else if (this.bonusTile[1] > 7) {
-            if (cc.random0To1() > 0.5) {
+            if (Math.random() > 0.5) {
                 this.setBonus(2, new Weapon(this.rowFill, true));
             } else {
                 this.setBonus(3, new Weapon(this.colFill, true));
@@ -510,10 +510,10 @@ cc.Class({
                     if (color === dcolor && !bonus) {
                         self.fixTile(tpoint); // - помечаем тайл
                         //Добавляем в стек 4 прилегающих тайла:
-                        stack.push(cc.p(tpoint.x + 1, tpoint.y));
-                        stack.push(cc.p(tpoint.x, tpoint.y + 1));
-                        stack.push(cc.p(tpoint.x - 1, tpoint.y));
-                        stack.push(cc.p(tpoint.x, tpoint.y - 1));
+                        stack.push(cc.v2(tpoint.x + 1, tpoint.y));
+                        stack.push(cc.v2(tpoint.x, tpoint.y + 1));
+                        stack.push(cc.v2(tpoint.x - 1, tpoint.y));
+                        stack.push(cc.v2(tpoint.x, tpoint.y - 1));
                     } else {
                         //При выходе за пределы массива:
                         continue;
@@ -525,20 +525,20 @@ cc.Class({
     //Алгоритм заливки указанной строки (бонусный бустер):
     rowFill: function(point, self) {
         for (let i = 0; i < self.rowCount; i++) {
-            self.fixTile(cc.p(i, point.y));
+            self.fixTile(cc.v2(i, point.y));
         }
     },
     //Алгоритм заливки указанного столбца (бонусный бустер):
     colFill: function(point, self) {
         for (let i = 0; i < self.colCount; i++) {
-            self.fixTile(cc.p(point.x, i));
+            self.fixTile(cc.v2(point.x, i));
         }
     },
     //Алгоритм уничтожения всех тайлов (бонусный бустер):
     atomBomb: function(point, self) {
         for (let i = 0; i < self.rowCount; i++) {
             for (let j = 0; j < self.colCount; j++) {
-                self.fixTile(cc.p(i, j));
+                self.fixTile(cc.v2(i, j));
             }
         }
     },
@@ -548,11 +548,11 @@ cc.Class({
             let j = 0;
             let kat = Math.sqrt(Math.pow(self.bombRadius, 2) - Math.pow(point.x - i, 2));
             while (j <= kat) {
-                if (self.inMatrix(cc.p(i, point.y + j))) {
-                    self.fixTile(cc.p(i, point.y + j));
+                if (self.inMatrix(cc.v2(i, point.y + j))) {
+                    self.fixTile(cc.v2(i, point.y + j));
                 }
-                if (self.inMatrix(cc.p(i, point.y - j))) {
-                    self.fixTile(cc.p(i, point.y - j));
+                if (self.inMatrix(cc.v2(i, point.y - j))) {
+                    self.fixTile(cc.v2(i, point.y - j));
                 }
                 j++;
             }
@@ -565,9 +565,9 @@ cc.Class({
         for (let i = 0; i < self.rowCount/2; i++) {
             for (let j = 0; j < self.colCount; j++) {
                 //Берем случайный тайл из второй половины:
-                let randx = Math.round(self.rowCount/2+ cc.random0To1()*(self.rowCount - 1)/2);
+                let randx = Math.round(self.rowCount/2+ Math.random()*(self.rowCount - 1)/2);
                 //Берем тайл из любой колонки:
-                let randy = Math.round(cc.random0To1()*(self.colCount - 1));
+                let randy = Math.round(Math.random()*(self.colCount - 1));
                 //Меняем местами цвета, оружие и бонусность случайного и текущего тайла:
                 this.tilesReplece(self.matrix[i][j], self.matrix[randx][randy]);
                 self.matrix[i][j].getComponent("TileSc").setSprite();

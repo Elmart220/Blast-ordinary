@@ -59,7 +59,7 @@ cc.Class({
             }
             let btLevel = cc.instantiate(this.levels);
             btLevel.getComponent(cc.Label).string = i;
-            btLevel.getComponent("LevelButton").setLoad(i, cc.p(x, y), this);
+            btLevel.getComponent("LevelButton").setLoad(i, cc.v2(x, y), this);
             this.menuPane.addChild(btLevel);
             x += 30;
         }

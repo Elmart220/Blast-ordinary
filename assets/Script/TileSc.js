@@ -87,18 +87,15 @@ cc.Class({
     },
     //Анимирует падение на величину s:
     setTileMove: function(s) {
-        let smove = cc.moveBy(this.moveDuration/2,cc.v2(0, -s*this.moveStep)).easing(cc.easeCubicActionIn());
-        return cc.sequence(smove);
+        return cc.moveBy(this.moveDuration/2,cc.v2(0, -s*this.moveStep)).easing(cc.easeCubicActionIn());
     },
     //Анимирует уменьшение (в процессе игры):
     setTileScale: function() {
-        let scal = cc.scaleTo(this.scaleDuration,0, 0);
-        return cc.sequence(scal);
+        return cc.scaleTo(this.scaleDuration,0, 0);
     },
     //Анимирует появление (в процессе игры):
     setTileShow: function() {
-        let show = cc.scaleTo(this.scaleDuration,1, 1);
-        return cc.sequence(show);
+        return cc.scaleTo(this.scaleDuration,1, 1);
     },
     //Анимирует исчезновение спустя некоторое время:
     setTileDontShow: function () {
@@ -112,19 +109,19 @@ cc.Class({
         this.node.runAction(this.setTileDontShow());
     },
     //Данный тайл был или нажат, или уничтожен (в процессе игры):
-    Clatc: function() {
+    clatc: function() {
         //Визуализируем исчезновение:
         this.node.runAction(this.setTileScale());
-        this.Animation();
+        this.animation();
         this.tileDat.isBonus = false;
     },
     //На тайл повлияла гравитация:
     tileRun: function(s) {
         this.node.runAction(this.setTileMove(s));
-        this.Animation();
+        this.animation();
     },
     //Процесс анимации:
-    Animation: function() {
+    animation: function() {
         setTimeout(() => {
             if (this.game.isEnabled) {
                 //this.node.stopAllActions(); // - останавливаем все движение

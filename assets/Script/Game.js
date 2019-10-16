@@ -277,10 +277,10 @@ cc.Class({
     setBtScale: function(sk) {
         if (sk) {
             let noshow = cc.scaleTo(0.1,0, 0);
-            return cc.sequence(noshow);
+            return noshow;
         } else {
             let noshow = cc.scaleTo(0.1,1, 1);
-            return cc.sequence(noshow);
+            return noshow;
         }
         
     },
@@ -477,7 +477,7 @@ cc.Class({
             while (fixTileStack.length > 0) {
                 let ft = fixTileStack.pop();    // - взяли из него реквизиты тайла
                 //Активировали сам тайл по реквизитам:
-                this.matrix[ft.y][ft.x].getComponent("TileSc").Clatc();
+                this.matrix[ft.y][ft.x].getComponent("TileSc").clatc();
             } 
             this.tileSound(); // - воспроизводим звук
         } else {

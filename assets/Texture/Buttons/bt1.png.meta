@@ -1,12 +1,16 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.3",
   "uuid": "cdb259a0-cd51-4e16-a265-11ae6dee5967",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
   "subMetas": {
     "bt1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "97b8e081-9ef0-4520-8de5-cd58aa143215",
       "rawTextureUuid": "cdb259a0-cd51-4e16-a265-11ae6dee5967",
       "trimType": "auto",

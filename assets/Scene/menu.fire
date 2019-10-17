@@ -74,8 +74,6 @@
         "__id__": 3
       }
     ],
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -133,8 +131,6 @@
         "__id__": 4
       }
     ],
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -201,8 +197,6 @@
         "__id__": 17
       }
     ],
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -249,8 +243,6 @@
       "height": 32
     },
     "_children": [],
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -324,8 +316,6 @@
       "height": 24
     },
     "_children": [],
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -399,8 +389,6 @@
       "height": 24
     },
     "_children": [],
-    "_rotationX": 4.300000000000001,
-    "_rotationY": 4.300000000000001,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -425,7 +413,13 @@
       }
     ],
     "_prefab": null,
-    "groupIndex": 0
+    "groupIndex": 0,
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": -4.300000000000001
+    }
   },
   {
     "__type__": "cc.Label",
@@ -540,8 +534,6 @@
       "height": 24
     },
     "_children": [],
-    "_rotationX": -3.5000000000000018,
-    "_rotationY": -3.5000000000000018,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -566,7 +558,13 @@
       }
     ],
     "_prefab": null,
-    "groupIndex": 0
+    "groupIndex": 0,
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 3.5000000000000018
+    }
   },
   {
     "__type__": "cc.Label",
@@ -685,8 +683,6 @@
         "__id__": 18
       }
     ],
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 0,
     "_scaleY": 0,
     "_position": {
@@ -733,8 +729,6 @@
       "height": 16
     },
     "_children": [],
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {

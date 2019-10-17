@@ -9,7 +9,7 @@ cc.Class({
     loadTileSprites: function() {
         Global.spriteFrames = new Array(Global.spriteUrls.length);
         Global.bonusSpriteFrames = new Array(Global.bonusUrls.length);
-        Global.soundClips = new Array(Global.soundUrls.length);
+        Global.soundClips = new Array(Global.soundUrls.length + 1);
         //Загрузка спрайтов для тайлов:
         for (let i = 0; i < Global.spriteUrls.length; i++) {
             //Загружаем необходимый спрайт:
@@ -31,6 +31,9 @@ cc.Class({
                 Global.soundClips[i] = audio;            
             });
         }
+        cc.loader.loadRes("sound/Pay", cc.AudioClip, function (err, audio) {        
+            Global.paySound = audio;            
+        });
     },
 
     onLoad: function () {

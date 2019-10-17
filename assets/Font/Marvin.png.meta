@@ -1,12 +1,16 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.3",
   "uuid": "0f3d1c20-d99b-4988-8c99-6cfee55a93dd",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
   "subMetas": {
     "Marvin": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "a3c02f0a-51eb-4d17-95f5-484e8a8c7aa8",
       "rawTextureUuid": "0f3d1c20-d99b-4988-8c99-6cfee55a93dd",
       "trimType": "auto",

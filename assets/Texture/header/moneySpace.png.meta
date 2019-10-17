@@ -1,12 +1,16 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.3",
   "uuid": "bb1fa391-7977-4236-9015-7e6babbdeaac",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
   "subMetas": {
     "moneySpace": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "1f18a84f-3b82-426b-9a49-1cc0efc28546",
       "rawTextureUuid": "bb1fa391-7977-4236-9015-7e6babbdeaac",
       "trimType": "auto",

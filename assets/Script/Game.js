@@ -93,11 +93,7 @@ cc.Class({
         btMain: {
             default: null,
             type: cc.Node
-        },
-        paySound: {
-            default: null,
-            url: cc.AudioClip
-        },
+        }
     },
     /* 
         -------------------------------------
@@ -270,7 +266,7 @@ cc.Class({
             Global.money -= price; // - делаем покупку
             this.weapon = weapon;    // - ставим бонусное оружие
             this.upAllDisplays(); // - обновляем дисплеи
-            cc.audioEngine.playEffect(this.paySound, false);
+            cc.audioEngine.playEffect(Global.paySound, false);
         }
     },
     //Плавное появление и исчезновение кнопок:

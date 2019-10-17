@@ -5,6 +5,7 @@ window.Global = {
     bonusSpriteFrames: [],
     soundUrls: ["sound/Tile", "sound/Tile1", "sound/Tile2"],
     soundClips: [],
+    paySound: null,
     money: 100,
     level: 0,
     missing: [[100, 50, 2, 1, 4, 4], 

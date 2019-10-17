@@ -1,12 +1,16 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.3",
   "uuid": "1c6261b4-0f4c-4bc1-bb28-8dfa10e3784d",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "platformSettings": {},
   "subMetas": {
     "GreenMarvin": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "af6f9279-d4cf-497a-833b-ad21add2f3a9",
       "rawTextureUuid": "1c6261b4-0f4c-4bc1-bb28-8dfa10e3784d",
       "trimType": "auto",

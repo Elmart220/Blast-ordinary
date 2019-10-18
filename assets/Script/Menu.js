@@ -35,13 +35,11 @@ cc.Class({
     },
     //Показать меню уровней:
     setScaleUp: function() {
-        let show = cc.scaleTo(0.3, 1, 1);
-        return cc.sequence(show);
+        return cc.scaleTo(0.3, 1, 1);;
     },
     //Спрятать меню уровней:
     setScaleDown: function() {
-        let noshow = cc.scaleTo(0.3, 0, 0);
-        return cc.sequence(noshow);
+        return cc.scaleTo(0.3, 0, 0);
     },
     //Загружает нужный уровень:
     btLevelClick: function(level) {

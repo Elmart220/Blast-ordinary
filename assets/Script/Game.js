@@ -255,6 +255,7 @@ cc.Class({
             Global.money -= this.randPrice; // - делаем покупку
             this.randTiles(cc.v2(0,0), this);    // - перемешиваем поле
             this.upAllDisplays(); // - обновляем дисплеи
+            //Звук покупки:
             cc.audioEngine.playEffect(this.paySound, false);
         }
         

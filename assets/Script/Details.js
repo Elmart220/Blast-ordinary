@@ -12,4 +12,4 @@ export function ActTile(x, y, col, isBonus) {
     this.isBonus = isBonus
 }
 
-//Какое-то изменение
+//Какое-то было изменение

@@ -8,6 +8,7 @@ export function Weapon(method, isOne) {
 export function ActTile(x, y, col, isBonus) {
     this.x = x; // - координаты
     this.y = y;
-    this.c = col;   // - цвет
+    this.c = col;   // - цвет тайла
     this.isBonus = isBonus
 }
+//Новый комментарий

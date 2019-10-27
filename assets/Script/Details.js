@@ -3,7 +3,7 @@ export function Weapon(method, isOne) {
     this.method = method;   // - ччылка на метод
     this.isOne = isOne; // - одноразово/многоразово
 }
-
+//Менялось!
 //Класс, содержащий информацию о цвете и координатах тайла в массиве
 export function ActTile(x, y, col, isBonus) {
     this.x = x; // - координаты

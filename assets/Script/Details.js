@@ -10,3 +10,4 @@ export function ActTile(x, y, col, isBonus) {
     this.c = col;   // - цвет тайла
     this.isBonus = isBonus
 }
+//Новый комментарий
